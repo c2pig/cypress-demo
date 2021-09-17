@@ -1,0 +1,23 @@
+{
+  "name": "cypress-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress": "cypress run",
+    "cypress-open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c2pig/cypress-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/c2pig/cypress-demo/issues"
+  },
+  "homepage": "https://github.com/c2pig/cypress-demo#readme",
+  "dependencies": {
+    "cypress": "8.4.0"
+  }
+}
