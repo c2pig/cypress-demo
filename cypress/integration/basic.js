@@ -13,6 +13,18 @@ describe(`When visit ${baseUrl}`, () => {
     cy.visit('/')
   })
 
+  it('[User] homepage should render UI components', () => {
+    cy.get('div[class="close"]').click();
+    cy.contains('a', 'View')
+      .should('have.attr', 'href', 'http://play.google.com/store/apps/details?id=com.celcom.mycelcom')
+    cy.get('a[class="smartbanner-close"]').click(); //check playstore link before close top banner
+    cy.contains('Products').click();
+    cy.contains('Shop').click();
+    cy.contains('Lifestyle').click();
+    cy.contains('Support').click();
+    cy.contains('Our Network').click();
+  });
+
   it('[SEO] homepage should not redirect to /personal', () => {
     cy.url().should('be.equal', `${baseUrl}/personal`);
   });
@@ -53,16 +65,4 @@ describe(`When visit ${baseUrl}`, () => {
       assertByDomExist(dom, 'meta[name="description"]');
     });
   }); 
-
-  it('[User] homepage should render UI components', () => {
-    cy.get('div[class="close"]').click();
-    cy.contains('a', 'View')
-      .should('have.attr', 'href', 'http://play.google.com/store/apps/details?id=com.celcom.mycelcom')
-    cy.get('a[class="smartbanner-close"]').click(); //check playstore link before close top banner
-    cy.contains('Products').click();
-    cy.contains('Shop').click();
-    cy.contains('Lifestyle').click();
-    cy.contains('Support').click();
-    cy.contains('Our Network').click();
-  });
 })
